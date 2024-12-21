@@ -1,16 +1,28 @@
 package TicTacToe.Controllers;
 
+import TicTacToe.Models.Game;
 import TicTacToe.Models.GameState;
 import TicTacToe.Models.Player;
+import TicTacToe.Strategies.RowWinningStrategy;
 import TicTacToe.Strategies.WinningStrategy;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class GameController {
 
-    public void startGame(List<Player> players, int size, List<WinningStrategy> winningStrategies) {}
+    Scanner scr = new Scanner(System.in);
 
-    public void makeMove(int row, int col){}
+    public Game startGame(List<Player> players, int size, List<WinningStrategy> winningStrategies) {
+        return new Game(players, size, winningStrategies);
+    }
+
+    public void makeMove(int row, int col){
+        System.out.println("Please enter a valid row");
+        scr.nextLine();
+        System.out.println("Please enter a valid column");
+        scr.nextLine();
+    }
 
     public void Undo(){}
 

@@ -2,6 +2,7 @@ package TicTacToe.Models;
 
 import TicTacToe.Strategies.WinningStrategy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
@@ -12,6 +13,17 @@ public class Game {
     private List<Move> moves;
     private List<WinningStrategy> winningStrategies;
     private Player winner;
+
+    public Game(List<Player> players, int size, List<WinningStrategy> winningStrategies){
+        this.board = new Board(size);
+        this.players = players;
+        this.nextPlayerIndex = 0;
+        this.gameState = GameState.IN_PROGRESS;
+        this.moves = new ArrayList<>();
+        this.winner = null;
+        this.winningStrategies = winningStrategies;
+
+    }
 
     public Player getWinner() {
         return winner;

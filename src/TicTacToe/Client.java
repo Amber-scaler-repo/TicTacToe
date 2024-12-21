@@ -20,15 +20,16 @@ public class Client {
         int size = players.size()+1;
         List<WinningStrategy> winningStrategies = new ArrayList<>();
 
-        gameController.startGame(players,size,winningStrategies);
+        Game game  = gameController.startGame(players,size,winningStrategies);
 
-        while(gameController.getGameState().equals(GameState.IN_PROGRESS)){
-            gameController.Display();
+        while(gameController.getGameState(game).equals(GameState.IN_PROGRESS)){
+            gameController.Display(game);
+            gameController.makeMove(row, col);
         }
 
-        if(gameController.getGameState().equals(GameState.SUCCESS)){
+        if(gameController.getGameState(game).equals(GameState.SUCCESS)){
             System.out.println("Winner " + gameController.getWinner().getName());
-        }else if(gameController.getGameState().equals(GameState.DRAW)){
+        }else if(gameController.getGameState(game).equals(GameState.DRAW)){
             System.out.println("Game ends in a draw.");
         }
     }
