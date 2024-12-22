@@ -44,4 +44,13 @@ public class Cell {
     public void setSymbol(Symbol symbol) {
         this.symbol = symbol;
     }
+
+    public void displayCell(){
+        if(cellState == CellState.EMPTY){
+            System.out.print("| - |");
+        }
+        else if(cellState == CellState.Occupied){
+            System.out.print("| " + symbol.getCharSymbol() + " |");
+        }
+    }
 }

@@ -1,16 +1,23 @@
 package TicTacToe.Models;
 
 public abstract class Player {
-    private int id;
+    private Integer id;
     private String name;
     private Symbol symbol;
     private PlayerType playerType;
 
-    public int getId() {
+    public Player(Integer id, String name, Symbol symbol, PlayerType playerType) {
+        this.id = id;
+        this.name = name;
+        this.symbol = symbol;
+        this.playerType = playerType;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

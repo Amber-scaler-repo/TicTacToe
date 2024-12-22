@@ -1,8 +1,6 @@
 package TicTacToe.Controllers;
 
-import TicTacToe.Models.Game;
-import TicTacToe.Models.GameState;
-import TicTacToe.Models.Player;
+import TicTacToe.Models.*;
 import TicTacToe.Strategies.RowWinningStrategy;
 import TicTacToe.Strategies.WinningStrategy;
 
@@ -14,22 +12,22 @@ public class GameController {
     Scanner scr = new Scanner(System.in);
 
     public Game startGame(List<Player> players, int size, List<WinningStrategy> winningStrategies) {
-        return new Game(players, size, winningStrategies);
+        return new Game.getBuilder(players, size, winningStrategies);
     }
 
-    public void makeMove(int row, int col){
-        System.out.println("Please enter a valid row");
-        scr.nextLine();
-        System.out.println("Please enter a valid column");
-        scr.nextLine();
+    public void makeMove(Game game, int row, int col){
+        //Move move = new Move(new Cell(), game.pla);
     }
 
     public void Undo(){}
 
-    public void Display(){}
+    public void Display(Game game){
+        game.displayBoard();
+    }
 
-    public GameState getGameState(){
-        return null;
+    public GameState getGameState(Game game){
+
+        return GameState.IN_PROGRESS;
     }
 
     public Player getWinner(){
