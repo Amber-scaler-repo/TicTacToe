@@ -40,7 +40,10 @@ public class Game {
 
         public GameBuilder(){}
 
-        public GameBuilder Board(int size){
+        public GameBuilder Board(int size) throws Exception {
+            if(size >= players.size()){
+                throw new Exception("Board size must be less than the number of players");
+            }
             this.board = new Board(size);
             return this;
         }
@@ -50,7 +53,10 @@ public class Game {
             return this;
         }
 
-        public GameBuilder setNextPlayerIndex(int nextPlayerIndex){
+        public GameBuilder setNextPlayerIndex(int nextPlayerIndex) throws Exception {
+            if(nextPlayerIndex >= players.size()){
+                throw new Exception("Next player index must be less than the number of players");
+            }
             this.nextPlayerIndex = nextPlayerIndex;
             return this;
         }

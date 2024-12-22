@@ -23,6 +23,7 @@ public class Client {
 
         gameController.Display(game);
         while(gameController.getGameState(game).equals(GameState.IN_PROGRESS)){
+            gameController.Display(game);
             System.out.println("Please enter a valid row");
             int row = scr.nextInt();
             System.out.println("Please enter a valid column");
