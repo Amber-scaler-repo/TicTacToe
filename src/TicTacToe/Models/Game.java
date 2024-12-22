@@ -140,4 +140,10 @@ public class Game {
     public void displayBoard(){
         board.display();
     }
+
+    public void makeMove(){
+        for(WinningStrategy winningStrategy : winningStrategies){
+            winningStrategy.checkWinner(board,moves.get(nextPlayerIndex));
+        }
+    }
 }

@@ -15,7 +15,8 @@ public class GameController {
         return new Game.getBuilder(players, size, winningStrategies);
     }
 
-    public void makeMove(Game game, int row, int col){
+    public void makeMove(Game game){
+        game.makeMove();
         //Move move = new Move(new Cell(), game.pla);
     }
 
